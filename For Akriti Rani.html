@@ -1,0 +1,584 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>For Akriti Rani</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Nunito+Sans:wght@400;600&family=Caveat:wght@500;700&display=swap">
+<style>
+/* Layout: one centred column that opens section by section, with a floating heart and sparkle field behind it and a fixed music toggle. */
+:root {
+  --bg: #fff4f7;
+  --bg-2: #f1eaff;
+  --ink: #3a2236;
+  --muted: #7b6376;
+  --rose: #f6bccd;
+  --lav: #cfc0f6;
+  --red: #d42f50;
+  --on-red: #ffffff;
+  --card: rgba(255, 255, 255, 0.72);
+  --line: rgba(58, 34, 54, 0.14);
+  --glow: rgba(212, 47, 80, 0.38);
+  --paper: #fffafc;
+  --paper-ink: #4a2a45;
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Nunito Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-hand: 'Caveat', 'Segoe Script', 'Bradley Hand', cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1c1122; --bg-2: #2a1838; --ink: #fdebf1; --muted: #cdb3c7;
+    --rose: #e48aa6; --lav: #9c86d8; --red: #ff6b86; --on-red: #2a0f18;
+    --card: rgba(255, 255, 255, 0.07); --line: rgba(255, 255, 255, 0.16);
+    --glow: rgba(255, 107, 134, 0.5); --paper: #2f1d3b; --paper-ink: #fbe3ec;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1c1122; --bg-2: #2a1838; --ink: #fdebf1; --muted: #cdb3c7;
+  --rose: #e48aa6; --lav: #9c86d8; --red: #ff6b86; --on-red: #2a0f18;
+  --card: rgba(255, 255, 255, 0.07); --line: rgba(255, 255, 255, 0.16);
+  --glow: rgba(255, 107, 134, 0.5); --paper: #2f1d3b; --paper-ink: #fbe3ec;
+  color-scheme: dark;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--bg);
+  background-image: linear-gradient(165deg, var(--bg) 0%, var(--bg-2) 100%);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+  padding-inline: clamp(16px, 5vw, 48px);
+  padding-block: 0;
+  overflow-x: hidden;
+}
+@media (pointer: fine) {
+  body {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23d42f50' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") 12 12, auto;
+  }
+}
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 12px; }
+
+#bg, #fx { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+#bg { z-index: 0; }
+#fx { z-index: 40; }
+
+main { position: relative; z-index: 1; max-width: 720px; margin-inline: auto; }
+section { padding-block: clamp(40px, 9vh, 96px); min-width: 0; }
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.12; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+.eyebrow {
+  font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); font-weight: 600;
+}
+
+/* reveal mechanics */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.9s ease, transform 0.9s ease; transition-delay: calc(var(--i, 0) * 0.14s); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* hero */
+.hero { text-align: center; padding-block: clamp(88px, 18vh, 170px) clamp(48px, 8vh, 80px); }
+.hero h1 { font-size: clamp(2.7rem, 10vw, 5.4rem); letter-spacing: -0.01em; }
+.hero h1 em { font-style: italic; font-weight: 400; color: var(--red); }
+.hero .sub { margin-top: 20px; font-family: var(--font-display); font-style: italic; font-size: clamp(1.15rem, 3.4vw, 1.5rem); color: var(--muted); }
+.hero .actions { margin-top: 40px; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 52px; padding: 12px 28px; border-radius: 999px;
+  border: 1.5px solid transparent; font-weight: 600; font-size: 1rem; letter-spacing: 0.01em;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+.btn:hover { transform: translateY(-3px); }
+.btn:active { transform: translateY(0) scale(0.98); }
+.btn-primary { background: var(--red); color: var(--on-red); box-shadow: 0 10px 28px -10px var(--glow); }
+.btn-primary:hover { box-shadow: 0 16px 34px -10px var(--glow); }
+.btn-soft { background: var(--card); border-color: var(--lav); color: var(--ink); }
+.btn-soft:hover { background: color-mix(in srgb, var(--lav) 28%, transparent); }
+.btn-quiet { background: transparent; border-color: var(--line); color: var(--muted); min-height: 46px; padding-inline: 22px; }
+.btn-quiet:hover { color: var(--ink); border-color: var(--lav); }
+
+/* message */
+.message h2 { font-size: clamp(1.9rem, 6vw, 3rem); }
+.message .line2 { margin-top: 28px; font-size: clamp(1.15rem, 3.2vw, 1.45rem); max-width: 34em; }
+.typing > span:first-child::after {
+  content: ''; display: inline-block; width: 2px; height: 1em; margin-left: 3px; vertical-align: -0.12em;
+  background: var(--red); animation: blink 0.9s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+.next-row { margin-top: 36px; min-height: 52px; }
+
+/* reasons */
+.reasons h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); margin-top: 10px; }
+.cards { margin-top: 32px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 22px;
+  padding: 26px 24px; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.card:hover { transform: translateY(-5px) rotate(-0.4deg); border-color: var(--rose); box-shadow: 0 18px 38px -22px var(--glow); }
+.card h3 { font-size: 1.35rem; display: flex; align-items: center; gap: 10px; }
+.card p { margin-top: 10px; color: var(--muted); font-size: 1rem; }
+@media (max-width: 560px) { .cards { grid-template-columns: minmax(0, 1fr); } }
+
+/* proposal */
+.proposal { min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0; }
+.heart-glow { width: clamp(120px, 34vw, 190px); height: auto; filter: drop-shadow(0 0 22px var(--glow)) drop-shadow(0 0 52px var(--glow)); animation: beat 1.7s ease-in-out infinite; }
+.heart-glow path { fill: var(--red); }
+@keyframes beat { 0%, 100% { transform: scale(1); } 14% { transform: scale(1.1); } 28% { transform: scale(1); } 42% { transform: scale(1.07); } 56% { transform: scale(1); } }
+.proposal h2 { margin-top: 36px; font-size: clamp(2.1rem, 7vw, 3.6rem); font-weight: 400; font-style: italic; }
+.proposal .ask { margin-top: 18px; font-family: var(--font-display); font-size: clamp(1.4rem, 4.6vw, 2.1rem); max-width: 22em; line-height: 1.25; text-wrap: balance; }
+.choices { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.choices .btn { min-width: 200px; min-height: 58px; font-size: 1.05rem; }
+.panel { display: flex; flex-direction: column; align-items: center; gap: 0; }
+.panel h2 { margin-top: 0; font-style: normal; font-weight: 600; }
+.panel .sub { margin-top: 16px; font-size: clamp(1.1rem, 3.4vw, 1.4rem); color: var(--muted); max-width: 26em; }
+.panel .btn { margin-top: 34px; }
+
+/* final card */
+.final { padding-block: clamp(48px, 10vh, 110px) clamp(48px, 8vh, 80px); }
+.note {
+  position: relative; background: var(--paper); color: var(--paper-ink);
+  border: 1px solid var(--line); border-radius: 26px; padding: clamp(28px, 6vw, 56px);
+  box-shadow: 0 30px 60px -34px var(--glow), 0 0 0 8px color-mix(in srgb, var(--rose) 30%, transparent);
+  transform: rotate(-0.8deg);
+}
+.note p { font-family: var(--font-hand); font-weight: 500; font-size: clamp(1.55rem, 5.2vw, 2.15rem); line-height: 1.5; }
+.note .sign { margin-top: 28px; text-align: right; font-weight: 700; color: var(--red); }
+
+footer { position: relative; z-index: 1; text-align: center; padding-block: 28px 40px; color: var(--muted); font-size: 0.9rem; }
+
+/* music toggle */
+.music {
+  position: fixed; z-index: 50; right: 16px; top: calc(env(safe-area-inset-top, 0px) + 14px);
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 16px;
+  border-radius: 999px; background: var(--card); border: 1px solid var(--line);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); font-size: 0.9rem; font-weight: 600;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.music:hover { border-color: var(--rose); transform: translateY(-2px); }
+.music svg { width: 18px; height: 18px; fill: var(--red); flex: none; }
+.music .ic-pause { display: none; }
+.music[aria-pressed="true"] .ic-play { display: none; }
+.music[aria-pressed="true"] .ic-pause { display: block; }
+
+/* cursor trail */
+.trail { position: fixed; z-index: 60; pointer-events: none; color: var(--red); line-height: 1; animation: trail 0.95s ease-out forwards; }
+@keyframes trail { from { opacity: 0.85; transform: translate(-50%, -50%) scale(1); } to { opacity: 0; transform: translate(-50%, calc(-50% - 26px)) scale(0.4); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { transition: none; transform: none; }
+  .heart-glow { animation: none; }
+  .typing > span:first-child::after { animation: none; }
+  .btn, .card, .music { transition: none; }
+}
+</style>
+
+<button class="music" id="music" type="button" aria-pressed="false" aria-label="Play background music">
+  <svg class="ic-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+  <svg class="ic-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+  <span id="musicLabel">Play music</span>
+</button>
+
+<canvas id="bg" aria-hidden="true"></canvas>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<main>
+  <section class="hero" id="hero">
+    <h1>Hey <em>Akriti Rani</em> ❤️</h1>
+    <p class="sub">I have something I've been wanting to tell you...</p>
+    <div class="actions">
+      <button class="btn btn-primary" id="openBtn" type="button">Open My Heart 💌</button>
+    </div>
+  </section>
+
+  <section class="message" id="message" hidden>
+    <div class="reveal" id="msgWrap">
+      <h2 id="line1" aria-live="polite"></h2>
+      <p class="line2" id="line2"></p>
+    </div>
+    <div class="next-row">
+      <button class="btn btn-soft reveal" id="next1" type="button" hidden>Keep reading</button>
+    </div>
+  </section>
+
+  <section class="reasons" id="reasons" hidden>
+    <p class="eyebrow reveal">A few reasons</p>
+    <h2 class="reveal" style="--i:1">Why you?</h2>
+    <div class="cards">
+      <article class="card reveal" style="--i:2">
+        <h3>❤️ Your Smile</h3>
+        <p>There's something about your smile that can instantly make a normal day better.</p>
+      </article>
+      <article class="card reveal" style="--i:3">
+        <h3>✨ Your Personality</h3>
+        <p>You're genuinely someone I enjoy being around.</p>
+      </article>
+      <article class="card reveal" style="--i:4">
+        <h3>🌸 The Little Things</h3>
+        <p>Sometimes it's the smallest moments that stay in my mind the longest.</p>
+      </article>
+      <article class="card reveal" style="--i:5">
+        <h3>💫 You</h3>
+        <p>Honestly, I could keep writing reasons... but the biggest one is simply that you're you.</p>
+      </article>
+    </div>
+    <div class="next-row">
+      <button class="btn btn-soft reveal" id="next2" type="button" style="--i:6" hidden>One more thing</button>
+    </div>
+  </section>
+
+  <section class="proposal" id="proposal" hidden>
+    <svg class="heart-glow reveal" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+
+    <div class="panel" id="askPanel">
+      <h2 class="reveal" style="--i:2">So, Akriti Rani...</h2>
+      <p class="ask reveal" style="--i:5">Would you like to be someone special in my life? ❤️</p>
+      <div class="choices reveal" style="--i:8">
+        <button class="btn btn-primary" id="yesBtn" type="button">YES ❤️</button>
+        <button class="btn btn-soft" id="thinkBtn" type="button">LET ME THINK 🌸</button>
+      </div>
+    </div>
+
+    <div class="panel" id="yesPanel" aria-live="polite" hidden>
+      <h2>You just made my day ❤️</h2>
+      <p class="sub">I'm really happy you said yes, Akriti.</p>
+      <button class="btn btn-primary" id="lastBtn" type="button">One Last Message 💌</button>
+    </div>
+
+    <div class="panel" id="thinkPanel" aria-live="polite" hidden>
+      <h2>Of course ❤️</h2>
+      <p class="sub">Take your time. No pressure at all.</p>
+      <button class="btn btn-soft" id="backBtn" type="button">Back to My Message</button>
+    </div>
+  </section>
+
+  <section class="final" id="final" hidden>
+    <div class="note reveal">
+      <p>Akriti, I don't know what the future holds, but I know that I'm really glad I met you. I just wanted to be honest about how I feel. Whatever your answer is, I'll respect it. ❤️</p>
+      <p class="sign">— From someone who really likes you ❤️</p>
+    </div>
+  </section>
+</main>
+
+<footer>Made with ❤️ for Akriti Rani</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var HEART = 'M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z';
+  var heartPath = new Path2D(HEART);
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ---------- background hearts and sparkles ---------- */
+  var bg = $('bg'), bctx = bg.getContext('2d');
+  var fx = $('fx'), fctx = fx.getContext('2d');
+  var W = 0, H = 0, dpr = 1;
+  var HEART_COLORS = ['#f4a3bc', '#cdbbf5', '#e8506f', '#f9c9d8'];
+  var hearts = [], stars = [];
+
+  function rand(a, b) { return a + Math.random() * (b - a); }
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth; H = window.innerHeight;
+    [bg, fx].forEach(function (c) { c.width = W * dpr; c.height = H * dpr; });
+    bctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    fctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    if (!hearts.length) seed();
+    if (reduce) drawBg(0);
+  }
+
+  function seed() {
+    var n = W < 600 ? 16 : 26;
+    for (var i = 0; i < n; i++) {
+      hearts.push({ x: rand(0, W), y: rand(0, H), s: rand(10, 28), vy: rand(0.12, 0.42), ph: rand(0, 6.28), sw: rand(8, 26), a: rand(0.16, 0.42), c: HEART_COLORS[i % HEART_COLORS.length] });
+    }
+    for (var j = 0; j < 16; j++) {
+      stars.push({ x: rand(0, W), y: rand(0, H), r: rand(4, 9), ph: rand(0, 6.28), sp: rand(0.8, 1.8), c: j % 2 ? '#cdbbf5' : '#f6bccd' });
+    }
+  }
+
+  function star(ctx, x, y, r) {
+    ctx.beginPath();
+    ctx.moveTo(x, y - r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.quadraticCurveTo(x, y, x, y + r);
+    ctx.quadraticCurveTo(x, y, x - r, y);
+    ctx.quadraticCurveTo(x, y, x, y - r);
+    ctx.fill();
+  }
+
+  function drawHeart(ctx, x, y, size, color, alpha, rot) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = color;
+    ctx.translate(x, y);
+    if (rot) ctx.rotate(rot);
+    var k = size / 24;
+    ctx.scale(k, k);
+    ctx.translate(-12, -12);
+    ctx.fill(heartPath);
+    ctx.restore();
+  }
+
+  function drawBg(t) {
+    bctx.clearRect(0, 0, W, H);
+    hearts.forEach(function (h) {
+      if (!reduce) {
+        h.y -= h.vy;
+        if (h.y < -40) { h.y = H + 40; h.x = rand(0, W); }
+      }
+      var x = h.x + Math.sin(t / 1800 + h.ph) * h.sw;
+      drawHeart(bctx, x, h.y, h.s, h.c, h.a, Math.sin(t / 2400 + h.ph) * 0.25);
+    });
+    stars.forEach(function (s) {
+      var a = 0.25 + 0.45 * (0.5 + 0.5 * Math.sin(t / 1000 * s.sp + s.ph));
+      bctx.globalAlpha = a;
+      bctx.fillStyle = s.c;
+      star(bctx, s.x, s.y, s.r);
+    });
+    bctx.globalAlpha = 1;
+  }
+
+  function loop(t) {
+    drawBg(t);
+    requestAnimationFrame(loop);
+  }
+
+  window.addEventListener('resize', function () { resize(); });
+  resize();
+  if (!reduce) requestAnimationFrame(loop);
+
+  /* ---------- celebration ---------- */
+  var bits = [], fxRunning = false;
+  var CONF = ['#e8506f', '#f4a3bc', '#cdbbf5', '#ffffff', '#f9c9d8', '#b79cf0'];
+
+  function burst(n) {
+    for (var i = 0; i < n; i++) {
+      var heart = Math.random() < 0.45;
+      bits.push({
+        x: W / 2 + rand(-W * 0.2, W * 0.2), y: H * 0.55,
+        vx: rand(-6, 6), vy: rand(-15, -6), g: rand(0.18, 0.3),
+        s: heart ? rand(12, 24) : rand(6, 11), heart: heart,
+        c: CONF[Math.floor(Math.random() * CONF.length)],
+        r: rand(0, 6.28), vr: rand(-0.2, 0.2), life: 1, decay: rand(0.003, 0.007)
+      });
+    }
+    if (!fxRunning) { fxRunning = true; requestAnimationFrame(fxLoop); }
+  }
+
+  function fxLoop() {
+    fctx.clearRect(0, 0, W, H);
+    for (var i = bits.length - 1; i >= 0; i--) {
+      var b = bits[i];
+      b.vy += b.g; b.vx *= 0.99; b.x += b.vx; b.y += b.vy; b.r += b.vr; b.life -= b.decay;
+      if (b.life <= 0 || b.y > H + 40) { bits.splice(i, 1); continue; }
+      if (b.heart) {
+        drawHeart(fctx, b.x, b.y, b.s, b.c, Math.min(1, b.life * 1.6), b.r * 0.3);
+      } else {
+        fctx.save();
+        fctx.globalAlpha = Math.min(1, b.life * 1.6);
+        fctx.fillStyle = b.c;
+        fctx.translate(b.x, b.y); fctx.rotate(b.r);
+        fctx.fillRect(-b.s / 2, -b.s / 4, b.s, b.s / 2);
+        fctx.restore();
+      }
+    }
+    if (bits.length) requestAnimationFrame(fxLoop);
+    else { fxRunning = false; fctx.clearRect(0, 0, W, H); }
+  }
+
+  function celebrate() {
+    if (reduce) return;
+    burst(110);
+    setTimeout(function () { burst(70); }, 500);
+    setTimeout(function () { burst(60); }, 1100);
+  }
+
+  /* ---------- reveal helpers ---------- */
+  function show(sec, scroll) {
+    sec.hidden = false;
+    var items = sec.querySelectorAll('.reveal');
+    void sec.offsetWidth;
+    requestAnimationFrame(function () {
+      items.forEach(function (el) { if (!el.hidden) el.classList.add('in'); });
+    });
+    if (scroll !== false) {
+      setTimeout(function () { sec.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); }, 60);
+    }
+  }
+
+  function showItem(el) {
+    el.hidden = false;
+    void el.offsetWidth;
+    requestAnimationFrame(function () { el.classList.add('in'); });
+  }
+
+  function typeInto(el, text, speed) {
+    return new Promise(function (resolve) {
+      el.textContent = '';
+      var done = document.createElement('span');
+      var rest = document.createElement('span');
+      rest.style.visibility = 'hidden';
+      rest.textContent = text;
+      el.appendChild(done); el.appendChild(rest);
+      if (reduce) { done.textContent = text; rest.textContent = ''; return resolve(); }
+      el.classList.add('typing');
+      var i = 0;
+      var timer = setInterval(function () {
+        i++;
+        done.textContent = text.slice(0, i);
+        rest.textContent = text.slice(i);
+        if (i >= text.length) {
+          clearInterval(timer);
+          el.classList.remove('typing');
+          resolve();
+        }
+      }, speed);
+    });
+  }
+
+  /* ---------- story flow ---------- */
+  $('openBtn').addEventListener('click', function () {
+    this.disabled = true;
+    this.style.opacity = '0.6';
+    var sec = $('message');
+    show(sec);
+    $('msgWrap').classList.add('in');
+    typeInto($('line1'), "Akriti, I don't know the perfect way to say this...", 46).then(function () {
+      return new Promise(function (r) { setTimeout(r, reduce ? 0 : 450); });
+    }).then(function () {
+      return typeInto($('line2'), 'But somehow, talking to you, seeing you smile, and having you around started becoming really special to me.', 30);
+    }).then(function () {
+      showItem($('next1'));
+    });
+  });
+
+  $('next1').addEventListener('click', function () {
+    this.hidden = true;
+    show($('reasons'));
+    setTimeout(function () { showItem($('next2')); }, reduce ? 0 : 1900);
+  });
+
+  $('next2').addEventListener('click', function () {
+    this.hidden = true;
+    show($('proposal'));
+  });
+
+  var askPanel = $('askPanel'), yesPanel = $('yesPanel'), thinkPanel = $('thinkPanel');
+
+  $('yesBtn').addEventListener('click', function () {
+    askPanel.hidden = true; thinkPanel.hidden = true; yesPanel.hidden = false;
+    celebrate();
+  });
+
+  $('thinkBtn').addEventListener('click', function () {
+    askPanel.hidden = true; yesPanel.hidden = true; thinkPanel.hidden = false;
+  });
+
+  $('backBtn').addEventListener('click', function () {
+    thinkPanel.hidden = true; askPanel.hidden = false;
+    $('proposal').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  });
+
+  $('lastBtn').addEventListener('click', function () {
+    this.disabled = true;
+    show($('final'));
+  });
+
+  /* ---------- heart cursor trail (desktop) ---------- */
+  if (window.matchMedia('(pointer: fine)').matches && !reduce) {
+    var lastTrail = 0;
+    window.addEventListener('mousemove', function (e) {
+      var now = performance.now();
+      if (now - lastTrail < 70) return;
+      lastTrail = now;
+      var s = document.createElement('span');
+      s.className = 'trail';
+      s.textContent = '♥';
+      s.style.left = e.clientX + 'px';
+      s.style.top = e.clientY + 'px';
+      s.style.fontSize = Math.round(rand(10, 18)) + 'px';
+      s.addEventListener('animationend', function () { s.remove(); });
+      document.body.appendChild(s);
+    });
+  }
+
+  /* ---------- soft music (generated in the browser, starts only on click) ---------- */
+  var ctx = null, master = null, timer = null, step = 0, nextTime = 0, playing = false;
+  var CHORDS = [
+    [261.63, 329.63, 392.0, 493.88],
+    [220.0, 261.63, 329.63, 392.0],
+    [174.61, 220.0, 261.63, 329.63],
+    [196.0, 246.94, 293.66, 329.63]
+  ];
+  var PATTERN = [0, 1, 2, 3, 2, 1, 2, 1];
+  var EIGHTH = 0.5;
+
+  function pad(freq, t) {
+    var o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = 'sine'; o.frequency.value = freq / 2;
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.linearRampToValueAtTime(0.05, t + 1.3);
+    g.gain.linearRampToValueAtTime(0.0001, t + 4.3);
+    o.connect(g); g.connect(master);
+    o.start(t); o.stop(t + 4.4);
+  }
+
+  function pluck(freq, t) {
+    var o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = 'triangle'; o.frequency.value = freq * 2;
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.linearRampToValueAtTime(0.11, t + 0.015);
+    g.gain.exponentialRampToValueAtTime(0.0008, t + 1.5);
+    o.connect(g); g.connect(master);
+    o.start(t); o.stop(t + 1.6);
+  }
+
+  function schedule() {
+    while (nextTime < ctx.currentTime + 0.8) {
+      var chord = CHORDS[Math.floor(step / 8) % CHORDS.length];
+      if (step % 8 === 0) chord.forEach(function (f) { pad(f, nextTime); });
+      pluck(chord[PATTERN[step % 8]], nextTime);
+      step++; nextTime += EIGHTH;
+    }
+  }
+
+  function startAudio() {
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return false;
+    if (!ctx) {
+      ctx = new AC();
+      master = ctx.createGain();
+      master.gain.value = 0.9;
+      var delay = ctx.createDelay(1.0), fb = ctx.createGain(), wet = ctx.createGain();
+      delay.delayTime.value = 0.375; fb.gain.value = 0.32; wet.gain.value = 0.45;
+      master.connect(ctx.destination);
+      master.connect(delay); delay.connect(fb); fb.connect(delay); delay.connect(wet); wet.connect(ctx.destination);
+      nextTime = ctx.currentTime + 0.1;
+      timer = setInterval(schedule, 200);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    return true;
+  }
+
+  $('music').addEventListener('click', function () {
+    var btn = this;
+    if (!playing) {
+      if (!startAudio()) { $('musicLabel').textContent = 'Music unavailable'; return; }
+      playing = true;
+    } else {
+      playing = false;
+      if (ctx) ctx.suspend();
+    }
+    btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+    btn.setAttribute('aria-label', playing ? 'Pause background music' : 'Play background music');
+    $('musicLabel').textContent = playing ? 'Pause music' : 'Play music';
+  });
+})();
+</script>
+
+</body></html>
